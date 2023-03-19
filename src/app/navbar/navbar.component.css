@@ -1,0 +1,28 @@
+.navhead{
+	background-color: #3f51b5;
+	height: 40px;
+}
+
+
+h1 {
+ 	color: white; 
+ 	font-family: 'Open Sans Condensed', sans-serif; 
+ 	font-size: 18px; 
+ 	font-weight: 700; 
+ 	text-transform: uppercase; 
+ 	padding-top: 5px;
+ 	padding-left: 15px;
+ }
+
+.navdiv {
+	background-color: #3f51b5;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+button {
+	font-size: 		small;
+	width: 			130px;
+	border-radius: 0px !important;
+}
+
+.aboutB, .exitB{float: right;}
