@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavbarComponent} from './navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'basic_operations';
 
-  display = false;
-
-  onClick(){
-    this.display = this.display === true ? false : true;
-  }
+  
 }

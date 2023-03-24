@@ -1,0 +1,1309 @@
+[
+  {
+    "qid": 9,
+    "qtyp": "mc",
+    "qtxt": [
+      "Consider the following directory:",
+      " drwxrwxr-x 2 root sales 4096 Jan 1 15:21 sales",
+      "Which command ensures new files created within the directory sales are owned by the group sales?",
+      "(Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. chmod g+s sales"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. setpol -R newgroup=sales sales"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. chgrp -p sales sales"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. chown --persistent *.sales sales"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. chmod 2775 sales"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": []
+  },
+  {
+    "qid": 10,
+    "qtyp": "mc",
+    "qtxt": [],
+    "qanswers": [
+      {
+        "txt": [
+          "A. cat /proc/self/mounts"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. free"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. lsmounts"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. mount"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. cat /proc/filesystems"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 18,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following statements are true about the boot sequence of a PC using a BIOS? (Choose",
+      "two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. Some parts of the boot process can be configured from the BIOS"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. Linux does not require the assistance of the BIOS to boot a computer"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. The BIOS boot process starts only if secondary storage, such as the hard disk, is functional"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. The BIOS initiates the boot process after turning the computer on"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. The BIOS is started by loading hardware drivers from secondary storage, such as the hard disk"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 19,
+    "qtyp": "mc",
+    "qtxt": [
+      "What is true regarding UEFI firmware? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. It can read and interpret partition tables"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. It can use and read certain file systems"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. It stores its entire configuration on the /boot/ partition"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. It is stored in a special area within the GPT metadata"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. It is loaded from a fixed boot disk position"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 21,
+    "qtyp": "mc",
+    "qtxt": [
+      "When is the content of the kernel ring buffer reset? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. When the ring buffer is explicitly reset using the command dmesg --clear"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. When the ring buffer is read using dmesg without any additional parameters"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. When a configurable amount of time, 15 minutes by default, has passed"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. When the kernel loads a previously unloaded kernel module"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. When the system is shut down or rebooted"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": []
+  },
+  {
+    "qid": 25,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following directories on a 64 bit Linux system typically contain shared libraries? (Choose",
+      "two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. ~/.lib64/"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. /usr/lib64/"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. /var/lib64/"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. /lib64/"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. /opt/lib64/"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 26,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following files exist in a standard GRUB 2 installation? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. /boot/grub/stages/stage0"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. /boot/grub/i386-pc/lvm.mod"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. /boot/grub/fstab"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. /boot/grub/grub.cfg"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. /boot/grub/linux/vmlinuz"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 28,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following properties of a Linux system should be changed when a virtual machine is",
+      "cloned? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. The partitioning scheme"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. The file system"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. The D-Bus Machine ID"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. The permissions of /root/"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. The SSH host keys"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "CE",
+    "qinfo": []
+  },
+  {
+    "qid": 31,
+    "qtyp": "mc",
+    "qtxt": [
+      "What is true regarding the configuration of yum? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. Changes to the repository configuration become active after running yum confupdate"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. Changes to the yum configuration become active after restarting the yumd service"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. The configuration of package repositories can be divided into multiple files"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. Repository configurations can include variables such as $basearch or $releasever"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. In case /etc/yum.repos.d/contains files, /etc/yum.confis ignored"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "CD",
+    "qinfo": []
+  },
+  {
+    "qid": 36,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands list all files and directories within the /tmp/ directory and its",
+      "subdirectories which are owned by the user root? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. find /tmp -user root -print"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. find -path /tmp -uid root"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. find /tmp -uid root -print"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. find /tmp -user root"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. find -path /tmp -user root -print"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 37,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following are valid stream redirection operators within Bash? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. <"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. #>"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. %>"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. >>>"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. 2>&1"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": []
+  },
+  {
+    "qid": 40,
+    "qtyp": "mc",
+    "qtxt": [
+      "From a Bash shell, which of the following commands directly execute the instructions from the file",
+      "/usr/local/bin/runme.shi without starting a subshell? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. source /usr/local/bin/runme.sh"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. /usr/local/bin/runme.sh"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. /bin/bash /usr/local/bin/runme.sh"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. . /usr/local/bin/runme.sh"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. run /usr/local/bin/runme.sh"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 51,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands can be used to determine how long the system has been running?",
+      "(Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. uptime"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. up"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. time --up"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. uname -u"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. top"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": []
+  },
+  {
+    "qid": 54,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which wildcards will match the following filenames? (Choose two.)",
+      " ttyS0",
+      " ttyS1",
+      " ttyS2"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. ttyS[1-5]"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. tty?[0-5]"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. tty*2"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. tty[A-Z][012]"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. tty[Ss][02]"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 61,
+    "qtyp": "mc",
+    "qtxt": [
+      "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to",
+      "identify the intended partition? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. LABEL"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. ID"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. FIND"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. NAME"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. UUID"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": []
+  },
+  {
+    "qid": 65,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following files are found in the /boot/ filesystem? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. Linux kernel images"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. Bash shell binaries"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. systemd target and service units"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. Initial ramdisk images"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. fsck binaries"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 68,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following statements are correct when comparing Linux containers with traditional virtual",
+      "machines (e.g. LXC vs. KVM)? (Choose three.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. Containers are a lightweight virtualization method where the kernel controls process isolation and resource management."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. Fully virtualized machines can run any operating system for a specific hardware architecture within the virtual machine."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. Containers are completely decoupled from the host system’s physical hardware and can only use emulated virtual hardware devices."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. The guest environment for fully virtualized machines is created by a hypervisor which provides virtual and emulated hardware devices."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. Containers on the same host can use different operating systems, as the container hypervisor creates separate kernel execution."
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "ABD",
+    "qinfo": []
+  },
+  {
+    "qid": 71,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands are valid in the GRUB 2 configuration file? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. menuentry"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. uefi"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. pxe-ifconfig"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. insmod"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. kpartx"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 73,
+    "qtyp": "mc",
+    "qtxt": [
+      "What can the Logical Volume Manager (LVM) be used for? (Choose three.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. To create snapshots."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. To dynamically change the size of logical volumes."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. To dynamically create or delete logical volumes."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. To create RAID 9 arrays."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. To encrypt logical volumes."
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "ABC",
+    "qinfo": []
+  },
+  {
+    "qid": 74,
+    "qtyp": "mc",
+    "qtxt": [
+      "What are the main differences between GPT and MBR partition tables regarding maximum number",
+      "and size of partitions? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. MBR can handle partition sizes up to 4 TB, whereas GPT supports partition sizes up to 128 ZB."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. By default, GPT can manage up to 128 partitions while MBR only supports four primary partitions."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. By default, GPT can manage up to 64 partitions while MBR only supports 16 primary partitions."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. MBR can handle partition sizes up to 2.2 TB, whereas GPT supports sizes up to 9.4 ZB."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. Both GPT and MBR support up to four primary partitions, each with up to 4096 TB."
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 75,
+    "qtyp": "mc",
+    "qtxt": [
+      "A backup software heavily uses hard links between files which have not been changed in between two",
+      "backup runs.",
+      "Which benefits are realized due to these hard links? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. The old backups can be moved to slow backup media, such as tapes, while still serving as hard link target in new backups."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. The backup runs faster because hard links are asynchronous operations, postponing the copy operation to a later point in time."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. The backup is guaranteed to be uncharged because a hard linked file cannot be modified after its creation."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. The backup consumes less space because the hard links point to the same data on disk instead of storing redundant copies."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. The backup runs faster because, instead of copying the data of each file, hard links only change file system meta data."
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "DE",
+    "qinfo": []
+  },
+  {
+    "qid": 78,
+    "qtyp": "mc",
+    "qtxt": [
+      "Running chmod 640 filea.txt as a regular user doesn’t update filea.txt’s permission.",
+      "What might be a reason why chmod cannot modify the permissions? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. filea.txt is owned by another user and a regular user cannot change the permissions of another user’s file."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. filea.txt is a symbolic link whose permissions are a fixed value which cannot be changed."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. filea.txt has the sticky bit set and a regular user cannot remove this permission."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. filea.txt is a hard link whose permissions are inherited from the target and cannot be set directly."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. filea.txt has the SetUID bit set which imposes the restriction that only the root user can make changes to the file."
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AB",
+    "qinfo": []
+  },
+  {
+    "qid": 79,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following Linux filesystems preallocate a fixed number of inodes when creating a new",
+      "filesystem instead of generating them as needed? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. JFS"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. ext3"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. XFS"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. ext2"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. procfs"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 81,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands can be used to display the inode number of a given file? (Choose",
+      "two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. inode"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. ln"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. ls"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. cp"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. stat"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "CE",
+    "qinfo": []
+  },
+  {
+    "qid": 91,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands display the IDs of all processes owned by root? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. pgrep -c root"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. pgrep -u root"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. pgrep -f root"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. pgrep -U 0"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. pgrep -c 0"
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "BD",
+    "qinfo": []
+  },
+  {
+    "qid": 92,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following sequences in the vi editor saves the opened document and exits the editor?",
+      "(Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. Ctrl XX"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. Ctrl :W"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. Esc zz"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. Esc :wq"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. Esc ZZ"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "DE",
+    "qinfo": []
+  },
+  {
+    "qid": 94,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following tools can show the complete path of an executable file that the current shell",
+      "would execute when starting a command without specifying its complete path? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. find"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. pwd"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. which"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. locate"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. type"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "CE",
+    "qinfo": []
+  },
+  {
+    "qid": 97,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following commands print the current working directory when using a Bash shell?",
+      "(Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. echo \"${PWD}\""
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. echo \"${WD}\""
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. printwd"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. pwd"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. echo \"${pwd}\""
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 116,
+    "qtyp": "mc",
+    "qtxt": [
+      "Which of the following statements are correct about the initial RAM disk involved in the boot process",
+      "of Linux? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. An initramfs is a compressed file system archive, which can be unpacked to examine its contents."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. An initramfs file contains the MBR, the bootloader and the Linux kernel."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. After a successful boot, the initramfs contents are available in /run/initramfs/."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. The kernel uses the initramfs temporarily before accessing the real root file system."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "E. An initramfs does not depend on a specific kernel version and is not changed after the initial installation."
+        ],
+        "correct": false
+      }
+    ],
+    "qcorrect": "AD",
+    "qinfo": []
+  },
+  {
+    "qid": 118,
+    "qtyp": "mc",
+    "qtxt": [
+      "What information can the lspci command display about the system hardware? (Choose three.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. System battery type"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "B. Device IRQ settings"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "C. PCI bus speed"
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "D. Ethernet MAC address"
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. Device vendor identification"
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "BCE",
+    "qinfo": []
+  },
+  {
+    "qid": 120,
+    "qtyp": "mc",
+    "qtxt": [
+      "Given the following two symbolic links in a System V init configuration:",
+      " /etc/rc1.d/K01apache2",
+      " /etc/rc2.d/S02apache2",
+      "When are the scripts executed that are referenced by these links? (Choose two.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "A. S02apache2 is run when runlevel 2 is entered."
+        ],
+        "correct": true
+      },
+      {
+        "txt": [
+          "B. S02apache2 is run when runlevel 2 is left."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "C. K01apache2 is never run because K indicates a deactivated service."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "D. Both S02apache2 and K01apache2 are run during a system shutdown."
+        ],
+        "correct": false
+      },
+      {
+        "txt": [
+          "E. K01apache2 is run when runlevel 1 is entered."
+        ],
+        "correct": true
+      }
+    ],
+    "qcorrect": "AE",
+    "qinfo": [
+      "Explanation: correct answer: AE",
+      "Entering a runlevel, first all Kxx... scripts will be called ",
+      "with first parameter \"stop\" to stop the service.",
+      "Then all Sxx... script will be called",
+      "with first parameter \"start\" to start the service",
+      " /etc/rc1.d/K01apache2",
+      "    entering runlevel 1 : will execute script with parameter \"stop\" to stop service ",
+      " /etc/rc2.d/S02apache2",
+      "    entering runlevel 2 : will execute script with parameter \"start\" to start service ",
+      ""
+    ]
+  }
+]

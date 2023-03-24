@@ -1,0 +1,179 @@
+[
+  {
+    "qid": 6,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which program updates the database that is used by the locate command? (Specify ONLY the command",
+      "without any path or parameters)."
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "updatedb"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 11,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the",
+      "command without any path or parameters.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "df"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 15,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the",
+      "file name only without any path.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "cmdline"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 41,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which program runs a command in specific intervals and refreshes the display of the program’s output?",
+      "(Specify ONLY the command without any path or parameters.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "watch"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 59,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which command is used to start another command with a given nice level? (Specify ONLY the command",
+      "without any path or parameters.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "nice"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 63,
+    "qtyp": "fi",
+    "qtxt": [
+      "What directory contains configuration files for additional yum repositories? (Specify the full path to the",
+      "directory.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "/etc/yum.repos.d"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 76,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which file from the /proc/ filesystem contains a list of all currently mounted devices? (Specify the full",
+      "name of the file, including path.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "/proc/mounts"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 85,
+    "qtyp": "fi",
+    "qtxt": [
+      "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by",
+      "the system administrator be placed in order to be made available to all users on the system? (Specify the",
+      "full path to the directory.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "/usr/local/bin"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 110,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which command displays a list of all background tasks running in the current shell? (Specify ONLY the",
+      "command without any path or parameters.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "jobs"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 111,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which command is used to change the priority of an already running process? (Specify ONLY the",
+      "command without any path or parameters.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "renice"
+        ]
+      }
+    ],
+    "qinfo": []
+  },
+  {
+    "qid": 119,
+    "qtyp": "fi",
+    "qtxt": [
+      "Which System V init configuration file is commonly used to set the default run level? (Specify the full",
+      "name of the file, including path.)"
+    ],
+    "qanswers": [
+      {
+        "txt": [
+          "/etc/inittab"
+        ]
+      }
+    ],
+    "qinfo": []
+  }
+]

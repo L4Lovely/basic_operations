@@ -1,0 +1,23 @@
+
+<br>
+<h3 class="textheadline">Question Number</h3>
+<p  class="textbody">{{questionText}}</p>
+
+<button (click)="newMessage()">{{message}}</button>
+
+<label>{{message}}</label>
+<mat-divider class="divider"></mat-divider>
+<p class="answerheadline">Your answer:</p>
+
+
+<div *ngIf="questionType === 'mc';">
+<app-multiple-choice></app-multiple-choice>
+</div>
+
+<div *ngIf="questionType === 'sc';">
+<app-single-choice></app-single-choice>
+</div>
+
+<div *ngIf="questionType === 'fi';">
+<app-fill-in></app-fill-in>
+</div>
