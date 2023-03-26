@@ -19,3 +19,11 @@
 	margin-left: 21px;
 	margin-top: 15px;
 }
+
+.answerdiv {
+	min-height: 280px;
+}
+
+.questiondiv {
+	min-height: 150px;
+}

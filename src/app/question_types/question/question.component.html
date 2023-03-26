@@ -1,23 +1,24 @@
 
+<div class="questiondiv">
 <br>
 <h3 class="textheadline">Question Number</h3>
 <p  class="textbody">{{questionText}}</p>
-
-<button (click)="newMessage()">{{message}}</button>
-
-<label>{{message}}</label>
+</div>
 <mat-divider class="divider"></mat-divider>
 <p class="answerheadline">Your answer:</p>
 
+<div class="answerdiv">
+	<div *ngIf="questionType === 'mc';">
+	<app-multiple-choice></app-multiple-choice>
+	</div>
 
-<div *ngIf="questionType === 'mc';">
-<app-multiple-choice></app-multiple-choice>
+	<div *ngIf="questionType === 'sc';">
+	<app-single-choice></app-single-choice>
+	</div>
+
+	<div *ngIf="questionType === 'fi';">
+	<app-fill-in></app-fill-in>
+	</div>
 </div>
 
-<div *ngIf="questionType === 'sc';">
-<app-single-choice></app-single-choice>
-</div>
-
-<div *ngIf="questionType === 'fi';">
-<app-fill-in></app-fill-in>
-</div>
+<mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>

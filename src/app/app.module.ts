@@ -28,7 +28,8 @@ import { MatInputModule }          from '@angular/material/input';
 import { SingleChoiceComponent }   from './question_types/question/single-choice/single-choice.component';
 import { MultipleChoiceComponent } from './question_types/question/multiple-choice/multiple-choice.component';
 import { FillInComponent }         from './question_types/question/fill-in/fill-in.component';
-import { MatRadioModule }          from '@angular/material/radio'; 
+import { MatRadioModule }          from '@angular/material/radio';
+import { MatProgressBarModule }    from '@angular/material/progress-bar';
 
 import {QuestioneerService} from './questioneer.service'
 
@@ -61,7 +62,8 @@ import {QuestioneerService} from './questioneer.service'
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
-    FormsModule
+    FormsModule,
+    MatProgressBarModule
   ],
   providers: [QuestioneerService, QEmitterService],
   bootstrap: [AppComponent]

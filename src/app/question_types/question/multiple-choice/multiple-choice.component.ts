@@ -10,7 +10,7 @@ import { Capsule } from '../../../structs/transferStructs';
 })
 
 export class MultipleChoiceComponent implements OnInit{
-    getCapsule : Capsule;
+  getCapsule : Capsule;
 
   constructor(private CommS: QEmitterService){
     this.getCapsule = { ansTxt: [''], ansType : '' };

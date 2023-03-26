@@ -1,2 +1,4 @@
-export interface Capsule{ ansTxt : string[]; ansType : string; }
-
+export interface Capsule{ 
+	ansTxt  : string[]; 
+	ansType : string; 
+}

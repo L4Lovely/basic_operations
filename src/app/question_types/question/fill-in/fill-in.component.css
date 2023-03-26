@@ -1,0 +1,12 @@
+p {
+	margin-right: 30px;
+}
+
+.fillinbox {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+}

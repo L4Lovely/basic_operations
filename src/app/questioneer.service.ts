@@ -18,6 +18,9 @@ export class QuestioneerService implements OnInit {
     data_MCQ : any = LPI_MCQ_DATA;
     data_ALL : any = LPI_ALL_DATA;
 
+    constructor(){}
+    ngOnInit(){}
+
     //generates a mixed set of Question[]
     private _generateQSetMixed(datafile : string) : Question[]{
         let dataSet   : any        = datafile === 'ALL' ? this.data_ALL : 
@@ -47,7 +50,4 @@ export class QuestioneerService implements OnInit {
     getQSetMixed(datafile : string) : Question[]{
       return this._generateQSetMixed(datafile);
     }
-
-    ngOnInit(){}
-    constructor(){}
 }

@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card> 
 	<mat-card-header class="headline" mat-flat-button>{{quizTitle}}</mat-card-header>
 	<mat-card-subtitle class="subheadline">assisted sequential quiz mode</mat-card-subtitle>
 
@@ -6,10 +6,9 @@
 
 	<app-question></app-question>
 
-	<mat-divider></mat-divider>
 	<div class="buttonbox">
-	<button class="previous" mat-flat-button color="primary" [disabled]="true">back</button>
-	<button class="solution" mat-flat-button color="accent" [hidden]="solutionDisabled">check</button>
-	<button class="next" mat-flat-button color="primary">next</button>
+	<button (click)="onBack()" class="previous" mat-flat-button color="primary" [disabled]="backDisabled">back</button>
+	<button (click)="onCheck()" class="solution" mat-flat-button color="accent" [hidden]="solutionDisabled">check</button>
+	<button (click)="onNext()" class="next" mat-flat-button color="primary"		[disabled]="nextDisabled">next</button>
 	</div>
 </mat-card>
