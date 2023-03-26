@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { QEmitterService }          from '../../qemitter.service';
 import { ButtonStateCapsule }       from '../../structs/buttonStateCapsule';
 
@@ -8,11 +8,13 @@ import { ButtonStateCapsule }       from '../../structs/buttonStateCapsule';
   styleUrls: ['./sequencer.component.css']
 })
 
-export class SequencerComponent implements OnInit{
+export class SequencerComponent implements OnInit, OnDestroy{
     @Input() quizTitle?        : string;
     @Input() solutionDisabled? : boolean;
     @Input() backDisabled?     : boolean;
     @Input() nextDisabled?     : boolean;
+
+    BStateSubscription : any;
 
     constructor(private CommS : QEmitterService){
       this.backDisabled = true;
@@ -20,11 +22,11 @@ export class SequencerComponent implements OnInit{
     }
 
     ngOnInit() {
-      this.CommS.getButtonStateEvent().subscribe((bStateCap : ButtonStateCapsule) => { this.setButtonState(bStateCap); })
+      this.BStateSubscription = this.CommS.getButtonStateEvent().subscribe((bStateCap : ButtonStateCapsule) => { this.setButtonState(bStateCap); })
     }
 
     setButtonState(stateCapsule : ButtonStateCapsule) : void {
-      this.nextDisabled = stateCapsule.target === 'NEXT' ? stateCapsule.disabled : false;
+      this.nextDisabled = stateCapsule.target === 'NEXT' && stateCapsule.disabled === true ? true : false;
       this.backDisabled = stateCapsule.target === 'BACK' ? stateCapsule.disabled : false;
     }
 
@@ -38,5 +40,9 @@ export class SequencerComponent implements OnInit{
 
     onCheck() : void {
       this.CommS.sendClickEvent('CHECK');
+    }
+
+    ngOnDestroy() {
+      this.BStateSubscription.unsubscribe();
     }
 }

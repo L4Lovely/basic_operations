@@ -6,11 +6,19 @@ import { LearnModeBComponent }  from './quiz_modes/learn-mode-b/learn-mode-b.com
 import { CheckModeComponent }   from './quiz_modes/check-mode/check-mode.component';
 import { ExamModeComponent }    from './quiz_modes/exam-mode/exam-mode.component';
 import { AboutComponent }       from './about/about.component';
+import { SequencerComponent }   from './quiz_types/sequencer/sequencer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home',         component: HomeComponent},
-  {path: 'learn_mode_a', component: LearnModeAComponent},
+  {path: 'learn_mode_a', component: LearnModeAComponent,
+    children: [
+        { path: 'single_choice_quiz', component: SequencerComponent },
+        { path: 'multiple_choice_quiz', component: SequencerComponent },
+        { path: 'fill_in_quiz', component: SequencerComponent },
+        { path: 'mixed_quiz', component: SequencerComponent }
+      ]
+  },
   {path: 'learn_mode_b', component: LearnModeBComponent},
   {path: 'check_mode',   component: CheckModeComponent},
   {path: 'exam_mode',    component: ExamModeComponent},

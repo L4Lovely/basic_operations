@@ -38,7 +38,6 @@ export class QuestioneerService implements OnInit {
             q.qtxt = q.qtxt.replace(/([,|.|?])([\w|\(])/g, '$1 $2');
             questions.push(q);
         }
-        console.log()
         return questions;
     }
 

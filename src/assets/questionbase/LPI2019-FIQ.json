@@ -1,7 +1,7 @@
 [
   {
     "qid": 6,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which program updates the database that is used by the locate command? (Specify ONLY the command",
       "without any path or parameters)."
@@ -17,7 +17,7 @@
   },
   {
     "qid": 11,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which command displays the current disk space usage for all mounted file systems? (Specify ONLY the",
       "command without any path or parameters.)"
@@ -33,7 +33,7 @@
   },
   {
     "qid": 15,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which file in the /proc filesystem lists parameters passed from the bootloader to the kernel? (Specify the",
       "file name only without any path.)"
@@ -49,7 +49,7 @@
   },
   {
     "qid": 41,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which program runs a command in specific intervals and refreshes the display of the program’s output?",
       "(Specify ONLY the command without any path or parameters.)"
@@ -65,7 +65,7 @@
   },
   {
     "qid": 59,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which command is used to start another command with a given nice level? (Specify ONLY the command",
       "without any path or parameters.)"
@@ -81,7 +81,7 @@
   },
   {
     "qid": 63,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "What directory contains configuration files for additional yum repositories? (Specify the full path to the",
       "directory.)"
@@ -97,7 +97,7 @@
   },
   {
     "qid": 76,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which file from the /proc/ filesystem contains a list of all currently mounted devices? (Specify the full",
       "name of the file, including path.)"
@@ -113,7 +113,7 @@
   },
   {
     "qid": 85,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Following the Filesystem Hierarchy Standard (FHS), where should binaries that have been compiled by",
       "the system administrator be placed in order to be made available to all users on the system? (Specify the",
@@ -130,7 +130,7 @@
   },
   {
     "qid": 110,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which command displays a list of all background tasks running in the current shell? (Specify ONLY the",
       "command without any path or parameters.)"
@@ -146,7 +146,7 @@
   },
   {
     "qid": 111,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which command is used to change the priority of an already running process? (Specify ONLY the",
       "command without any path or parameters.)"
@@ -162,7 +162,7 @@
   },
   {
     "qid": 119,
-    "qtyp": "fi",
+    "qtyp": "FIQ",
     "qtxt": [
       "Which System V init configuration file is commonly used to set the default run level? (Specify the full",
       "name of the file, including path.)"

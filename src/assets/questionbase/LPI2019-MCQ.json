@@ -1,7 +1,7 @@
 [
   {
     "qid": 9,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Consider the following directory:",
       " drwxrwxr-x 2 root sales 4096 Jan 1 15:21 sales",
@@ -45,7 +45,7 @@
   },
   {
     "qid": 10,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [],
     "qanswers": [
       {
@@ -84,7 +84,7 @@
   },
   {
     "qid": 18,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following statements are true about the boot sequence of a PC using a BIOS? (Choose",
       "two.)"
@@ -126,7 +126,7 @@
   },
   {
     "qid": 19,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "What is true regarding UEFI firmware? (Choose two.)"
     ],
@@ -167,7 +167,7 @@
   },
   {
     "qid": 21,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "When is the content of the kernel ring buffer reset? (Choose two.)"
     ],
@@ -208,7 +208,7 @@
   },
   {
     "qid": 25,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following directories on a 64 bit Linux system typically contain shared libraries? (Choose",
       "two.)"
@@ -250,7 +250,7 @@
   },
   {
     "qid": 26,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following files exist in a standard GRUB 2 installation? (Choose two.)"
     ],
@@ -291,7 +291,7 @@
   },
   {
     "qid": 28,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following properties of a Linux system should be changed when a virtual machine is",
       "cloned? (Choose two.)"
@@ -333,7 +333,7 @@
   },
   {
     "qid": 31,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "What is true regarding the configuration of yum? (Choose two.)"
     ],
@@ -374,7 +374,7 @@
   },
   {
     "qid": 36,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands list all files and directories within the /tmp/ directory and its",
       "subdirectories which are owned by the user root? (Choose two.)"
@@ -416,7 +416,7 @@
   },
   {
     "qid": 37,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following are valid stream redirection operators within Bash? (Choose two.)"
     ],
@@ -457,7 +457,7 @@
   },
   {
     "qid": 40,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "From a Bash shell, which of the following commands directly execute the instructions from the file",
       "/usr/local/bin/runme.shi without starting a subshell? (Choose two.)"
@@ -499,7 +499,7 @@
   },
   {
     "qid": 51,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands can be used to determine how long the system has been running?",
       "(Choose two.)"
@@ -541,7 +541,7 @@
   },
   {
     "qid": 54,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which wildcards will match the following filenames? (Choose two.)",
       " ttyS0",
@@ -585,7 +585,7 @@
   },
   {
     "qid": 61,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Instead of supplying an explicit device in /etc/fstab for mounting, what other options may be used to",
       "identify the intended partition? (Choose two.)"
@@ -627,7 +627,7 @@
   },
   {
     "qid": 65,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following files are found in the /boot/ filesystem? (Choose two.)"
     ],
@@ -668,7 +668,7 @@
   },
   {
     "qid": 68,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following statements are correct when comparing Linux containers with traditional virtual",
       "machines (e.g. LXC vs. KVM)? (Choose three.)"
@@ -710,7 +710,7 @@
   },
   {
     "qid": 71,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands are valid in the GRUB 2 configuration file? (Choose two.)"
     ],
@@ -751,7 +751,7 @@
   },
   {
     "qid": 73,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "What can the Logical Volume Manager (LVM) be used for? (Choose three.)"
     ],
@@ -792,7 +792,7 @@
   },
   {
     "qid": 74,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "What are the main differences between GPT and MBR partition tables regarding maximum number",
       "and size of partitions? (Choose two.)"
@@ -834,7 +834,7 @@
   },
   {
     "qid": 75,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "A backup software heavily uses hard links between files which have not been changed in between two",
       "backup runs.",
@@ -877,7 +877,7 @@
   },
   {
     "qid": 78,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Running chmod 640 filea.txt as a regular user doesn’t update filea.txt’s permission.",
       "What might be a reason why chmod cannot modify the permissions? (Choose two.)"
@@ -919,7 +919,7 @@
   },
   {
     "qid": 79,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following Linux filesystems preallocate a fixed number of inodes when creating a new",
       "filesystem instead of generating them as needed? (Choose two.)"
@@ -961,7 +961,7 @@
   },
   {
     "qid": 81,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands can be used to display the inode number of a given file? (Choose",
       "two.)"
@@ -1003,7 +1003,7 @@
   },
   {
     "qid": 91,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands display the IDs of all processes owned by root? (Choose two.)"
     ],
@@ -1044,7 +1044,7 @@
   },
   {
     "qid": 92,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following sequences in the vi editor saves the opened document and exits the editor?",
       "(Choose two.)"
@@ -1086,7 +1086,7 @@
   },
   {
     "qid": 94,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following tools can show the complete path of an executable file that the current shell",
       "would execute when starting a command without specifying its complete path? (Choose two.)"
@@ -1128,7 +1128,7 @@
   },
   {
     "qid": 97,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following commands print the current working directory when using a Bash shell?",
       "(Choose two.)"
@@ -1170,7 +1170,7 @@
   },
   {
     "qid": 116,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Which of the following statements are correct about the initial RAM disk involved in the boot process",
       "of Linux? (Choose two.)"
@@ -1212,7 +1212,7 @@
   },
   {
     "qid": 118,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "What information can the lspci command display about the system hardware? (Choose three.)"
     ],
@@ -1253,7 +1253,7 @@
   },
   {
     "qid": 120,
-    "qtyp": "mc",
+    "qtyp": "MCQ",
     "qtxt": [
       "Given the following two symbolic links in a System V init configuration:",
       " /etc/rc1.d/K01apache2",

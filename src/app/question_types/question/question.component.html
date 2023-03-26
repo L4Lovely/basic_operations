@@ -8,15 +8,15 @@
 <p class="answerheadline">Your answer:</p>
 
 <div class="answerdiv">
-	<div *ngIf="questionType === 'mc';">
+	<div *ngIf="questionType === 'MCQ';">
 	<app-multiple-choice></app-multiple-choice>
 	</div>
 
-	<div *ngIf="questionType === 'sc';">
+	<div *ngIf="questionType === 'SCQ';">
 	<app-single-choice></app-single-choice>
 	</div>
 
-	<div *ngIf="questionType === 'fi';">
+	<div *ngIf="questionType === 'FIQ';">
 	<app-fill-in></app-fill-in>
 	</div>
 </div>

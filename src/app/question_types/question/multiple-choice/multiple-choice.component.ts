@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { QuestioneerService} from '../../../questioneer.service';
 import { QEmitterService } from '../../../qemitter.service';
 import { Capsule } from '../../../structs/transferStructs';  
@@ -8,7 +8,6 @@ import { Capsule } from '../../../structs/transferStructs';
   templateUrl: './multiple-choice.component.html',
   styleUrls: ['./multiple-choice.component.css']
 })
-
 export class MultipleChoiceComponent implements OnInit{
   getCapsule : Capsule;
 

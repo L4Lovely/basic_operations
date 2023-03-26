@@ -1,7 +1,7 @@
 [
   {
     "qid": 1,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which type of file system is created by mkfs when it is executed with the block device name only and",
       "without any additional parameters?"
@@ -43,7 +43,7 @@
   },
   {
     "qid": 2,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which umask value ensures that new directories can be read, written and listed by their owning user,",
       "read and listed by their owning group and are not accessible at all for everyone else?"
@@ -85,7 +85,7 @@
   },
   {
     "qid": 3,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands changes the number of days before the ext3 filesystem on /dev/sda1",
       "has to run through a full filesystem check while booting?"
@@ -127,7 +127,7 @@
   },
   {
     "qid": 4,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which is the default percentage of reserved space for the root user on new ext4 filesystems?"
     ],
@@ -168,7 +168,7 @@
   },
   {
     "qid": 5,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following is true when a file system, which is neither listed in /etc/fstab nor known to system,",
       "is mounted manually?"
@@ -210,7 +210,7 @@
   },
   {
     "qid": 7,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What does the command mount --bind do?"
     ],
@@ -251,7 +251,7 @@
   },
   {
     "qid": 8,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Consider the following output from the command ls -i:",
       "How would a new file named c.txt be created with the same inode number as a.txt (Inode 525385)?"
@@ -293,7 +293,7 @@
   },
   {
     "qid": 12,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which chown command changes the ownership to dave and the group to staff on a file named",
       "data.txt?"
@@ -335,7 +335,7 @@
   },
   {
     "qid": 13,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "When considering the use of hard links, what are valid reasons not to use hard links?"
     ],
@@ -376,15 +376,9 @@
   },
   {
     "qid": 14,
-    "qtyp": "sc",
-    "qtxt": [],
+    "qtyp": "SCQ",
+    "qtxt": ["In compliance with the FHS, in which of the directories are man pages found?"],
     "qanswers": [
-      {
-        "txt": [
-          "In compliance with the FHS, in which of the directories are man pages found?"
-        ],
-        "correct": false
-      },
       {
         "txt": [
           "A. /opt/man/"
@@ -421,7 +415,7 @@
   },
   {
     "qid": 16,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the process ID number of the init process on a System V init based system?"
     ],
@@ -462,7 +456,7 @@
   },
   {
     "qid": 17,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which daemon handles power management events on a Linux system?"
     ],
@@ -503,7 +497,7 @@
   },
   {
     "qid": 20,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "A faulty kernel module is causing issues with a network interface card.",
       "Which of the following actions ensures that this module is not loaded automatically when the system",
@@ -546,7 +540,7 @@
   },
   {
     "qid": 22,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the first program the Linux kernel starts at boot time when using System V init?"
     ],
@@ -587,7 +581,7 @@
   },
   {
     "qid": 23,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "A Debian package creates several files during its installation.",
       "Which of the following commands searches for packages owning the file /etc/debian_version?"
@@ -629,7 +623,7 @@
   },
   {
     "qid": 24,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is contained on the EFI System Partition?"
     ],
@@ -670,7 +664,7 @@
   },
   {
     "qid": 27,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands installs all packages with a name ending with the string foo?"
     ],
@@ -711,7 +705,7 @@
   },
   {
     "qid": 29,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands installs GRUB 2 into the master boot record on the third hard disk?"
     ],
@@ -752,7 +746,7 @@
   },
   {
     "qid": 30,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following partition types is used for Linux swap spaces when partitioning hard disk",
       "drives?"
@@ -794,7 +788,7 @@
   },
   {
     "qid": 32,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following apt-get subcommands installs the newest versions of all currently installed",
       "packages?"
@@ -836,7 +830,7 @@
   },
   {
     "qid": 33,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which command uninstalls a package but keeps its configuration files in case the package is",
       "re-installed?"
@@ -878,7 +872,7 @@
   },
   {
     "qid": 34,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands lists the dependencies of the RPM package file foo.rpm?"
     ],
@@ -919,7 +913,7 @@
   },
   {
     "qid": 35,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the maximum niceness value that a regular user can assign to a process with the nice",
       "command when executing a new process?"
@@ -961,7 +955,7 @@
   },
   {
     "qid": 38,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following vi commands deletes two lines, the current and the following line?"
     ],
@@ -1002,7 +996,7 @@
   },
   {
     "qid": 39,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "The command dbmaint & was used to run dbmaint in the background.",
       "However, dbmaint is terminated after logging out of the system.",
@@ -1046,7 +1040,7 @@
   },
   {
     "qid": 42,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Immediately after deleting 3 lines of text in vi and moving the cursor to a different line, which single",
       "character command will insert the deleted content below the current line?"
@@ -1088,7 +1082,7 @@
   },
   {
     "qid": 43,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands changes all CR-LF line breaks in the text file userlist.txt to Linux",
       "standard LF line breaks and stores the result in newlist.txt?"
@@ -1130,7 +1124,7 @@
   },
   {
     "qid": 44,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Given the following input stream:",
       " txt1.txt ",
@@ -1178,7 +1172,7 @@
   },
   {
     "qid": 45,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which command must be entered before exiting vi to save the current file as filea.txt?"
     ],
@@ -1219,7 +1213,7 @@
   },
   {
     "qid": 46,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following signals is sent to a process when the key combination Ctrl+C is pressed on the",
       "keyboard?"
@@ -1261,7 +1255,7 @@
   },
   {
     "qid": 47,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands displays the output of the foo command on the screen and also",
       "writes it to a file called /tmp/foodata?"
@@ -1303,7 +1297,7 @@
   },
   {
     "qid": 48,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What output will be displayed when the user fred executes the following command?",
       "  echo 'fred $USER’"
@@ -1345,7 +1339,7 @@
   },
   {
     "qid": 49,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands displays the path to the executable file that would be executed when",
       "the command foo is invoked?"
@@ -1387,7 +1381,7 @@
   },
   {
     "qid": 50,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "When redirecting the output of find to the xargs command, what option to find is useful if the filenames",
       "contain spaces?"
@@ -1429,7 +1423,7 @@
   },
   {
     "qid": 52,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is true regarding the command",
       "  ls > files ",
@@ -1472,7 +1466,7 @@
   },
   {
     "qid": 53,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following files, located in a user’s home directory, contains the Bash history?"
     ],
@@ -1513,7 +1507,7 @@
   },
   {
     "qid": 55,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands redirects the output of ls to standard error?"
     ],
@@ -1554,7 +1548,7 @@
   },
   {
     "qid": 56,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands displays the contents of a gzip compressed tar archive?"
     ],
@@ -1595,7 +1589,7 @@
   },
   {
     "qid": 57,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands prints a list of usernames (first column) and their primary group",
       "(fourth column) from the /etc/passwd file?"
@@ -1637,7 +1631,7 @@
   },
   {
     "qid": 58,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following regular expressions represents a single upper-case letter?"
     ],
@@ -1678,7 +1672,7 @@
   },
   {
     "qid": 60,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Given a log file loga.log with timestamps of the format DD/MM/YYYY:hh:mm:ss, which command filters",
       "out all log entries in the time period between 8:00 am and 8:59 am?"
@@ -1720,7 +1714,7 @@
   },
   {
     "qid": 62,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "A yum repository can declare sets of related packages.",
       "Which yum command installs all packages belonging to the group admintools?"
@@ -1762,7 +1756,7 @@
   },
   {
     "qid": 64,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands installs the GRUB boot files into the currently active file systems and",
       "the boot loader into the first partition of the first disk?"
@@ -1804,7 +1798,7 @@
   },
   {
     "qid": 66,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which file defines the network locations from where the Debian package manager downloads software",
       "packages?"
@@ -1846,7 +1840,7 @@
   },
   {
     "qid": 67,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "When removing a package on a system using dpkg package management, which dpkg option ensures",
       "configuration files are removed as well?"
@@ -1888,7 +1882,7 @@
   },
   {
     "qid": 69,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "The installation of a local Debian package failed due to unsatisfied dependencies.",
       "Which of the following commands installs missing dependencies and completes the interrupted package",
@@ -1931,7 +1925,7 @@
   },
   {
     "qid": 70,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands lists all currently installed packages when using RPM package",
       "management?"
@@ -1973,7 +1967,7 @@
   },
   {
     "qid": 72,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the purpose of the ldd command?"
     ],
@@ -2014,7 +2008,7 @@
   },
   {
     "qid": 77,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "How many fields are in a syntactically correct line of /etc/fstab?"
     ],
@@ -2055,7 +2049,7 @@
   },
   {
     "qid": 80,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands sets the SetUID permission on the executable /bin/foo?"
     ],
@@ -2096,7 +2090,7 @@
   },
   {
     "qid": 82,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following settings for umask ensures that new files have the default permissions -rw-r-----?"
     ],
@@ -2137,7 +2131,7 @@
   },
   {
     "qid": 83,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "After a power outage, the XFS file system of /dev/sda3 is inconsistent.",
       "How can the existing file system errors be fixed?"
@@ -2179,7 +2173,7 @@
   },
   {
     "qid": 84,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following properties of an existing file changes when a hard link pointing to that file is",
       "created?"
@@ -2221,7 +2215,7 @@
   },
   {
     "qid": 86,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands show how the shell handles a specific command?"
     ],
@@ -2262,7 +2256,7 @@
   },
   {
     "qid": 87,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "When in Normal mode in vi, which character can be used to begin a reverse search of the text?"
     ],
@@ -2303,7 +2297,7 @@
   },
   {
     "qid": 88,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands displays the manual page command from section 1?"
     ],
@@ -2344,7 +2338,7 @@
   },
   {
     "qid": 89,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands creates or, in case it already exists, overwrites a file called data with",
       "the output of ls?"
@@ -2386,7 +2380,7 @@
   },
   {
     "qid": 90,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands is used to change options and positional parameters within a",
       "running Bash shell?"
@@ -2428,7 +2422,7 @@
   },
   {
     "qid": 93,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the effect of the -v option for the grep command?"
     ],
@@ -2469,7 +2463,7 @@
   },
   {
     "qid": 95,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following signals is sent to a process when the key combination Ctrl+Z is pressed on the",
       "keyboard?"
@@ -2511,7 +2505,7 @@
   },
   {
     "qid": 96,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the output when the regular expression 's/[ABC][abc]/xx/' is applied to the following string?",
       " ABCabc"
@@ -2553,10 +2547,9 @@
   },
   {
     "qid": 98,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
-      "Which of the following commands outputs test to the shell?",
-      "++++++++++++++++++++++++++++++++++++++++++++++++++"
+      "Which of the following commands outputs test to the shell?"
     ],
     "qanswers": [
       {
@@ -2597,7 +2590,7 @@
   },
   {
     "qid": 99,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the default nice level when a process is started using the nice command?"
     ],
@@ -2638,7 +2631,7 @@
   },
   {
     "qid": 100,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "A user accidentally created the subdirectory \\dir in his home directory.",
       "Which of the following commands will remove that directory?"
@@ -2680,7 +2673,7 @@
   },
   {
     "qid": 101,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands can perform searches on file contents using regular expressions?"
     ],
@@ -2721,16 +2714,10 @@
   },
   {
     "qid": 102,
-    "qtyp": "sc",
-    "qtxt": [],
+    "qtyp": "SCQ",
+    "qtxt": ["In a nested directory structure, which find command line option would be used to restrict the",
+             "command to searching down a particular number of subdirectories?"],
     "qanswers": [
-      {
-        "txt": [
-          "In a nested directory structure, which find command line option would be used to restrict the",
-          "command to searching down a particular number of subdirectories?"
-        ],
-        "correct": false
-      },
       {
         "txt": [
           "A. -maxdepth"
@@ -2767,7 +2754,7 @@
   },
   {
     "qid": 103,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands determines a file’s format by using a definition database file which",
       "contains information about all common file types?"
@@ -2809,7 +2796,7 @@
   },
   {
     "qid": 104,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands generates a list of user names from /etc/passwd along with their",
       "login shell?"
@@ -2851,16 +2838,10 @@
   },
   {
     "qid": 105,
-    "qtyp": "sc",
-    "qtxt": [],
+    "qtyp": "SCQ",
+    "qtxt": ["If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present",
+             "in the current directory after running gunzip texts.tgz?"],
     "qanswers": [
-      {
-        "txt": [
-          "If the gzip compressed tar archive texts.tgz contains the files a.txt and b.txt, which files will be present",
-          "in the current directory after running gunzip texts.tgz?"
-        ],
-        "correct": false
-      },
       {
         "txt": [
           "A. Only a.txt, b.txt, and texts.tgz"
@@ -2897,16 +2878,10 @@
   },
   {
     "qid": 106,
-    "qtyp": "sc",
-    "qtxt": [],
+    "qtyp": "SCQ",
+    "qtxt": ["In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be",
+             "issued multiple times or applied to multiple rows?"],
     "qanswers": [
-      {
-        "txt": [
-          "In the vi editor, how can commands such as moving the cursor or copying lines into the buffer be",
-          "issued multiple times or applied to multiple rows?"
-        ],
-        "correct": false
-      },
       {
         "txt": [
           "A. By using the command :repeat followed by the number and the command"
@@ -2943,7 +2918,7 @@
   },
   {
     "qid": 107,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following statements is correct for a command ending with an & character?"
     ],
@@ -2984,7 +2959,7 @@
   },
   {
     "qid": 108,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands reads a file and creates separate chunks of a given size from the",
       "file’s contents?"
@@ -3026,7 +3001,7 @@
   },
   {
     "qid": 109,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the purpose of the xargs command?"
     ],
@@ -3067,15 +3042,9 @@
   },
   {
     "qid": 112,
-    "qtyp": "sc",
-    "qtxt": [],
+    "qtyp": "SCQ",
+    "qtxt": ["In Bash, inserting 1>&2 after a command redirects…"],
     "qanswers": [
-      {
-        "txt": [
-          "In Bash, inserting 1>&2 after a command redirects…"
-        ],
-        "correct": false
-      },
       {
         "txt": [
           "A. …standard error to standard input."
@@ -3112,7 +3081,7 @@
   },
   {
     "qid": 113,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "When booting from the hard disk, a computer successfully loads the Linux kernel and initramfs but",
       "hangs during the subsequent startup tasks. The system is booted using a Linux based rescue CD to",
@@ -3156,7 +3125,7 @@
   },
   {
     "qid": 114,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Where is the bootloader stored on the hard disk of a UEFI system?"
     ],
@@ -3197,7 +3166,7 @@
   },
   {
     "qid": 115,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "What is the correct way to set the default systemd boot target to multi-user?"
     ],
@@ -3238,7 +3207,7 @@
   },
   {
     "qid": 117,
-    "qtyp": "sc",
+    "qtyp": "SCQ",
     "qtxt": [
       "Which of the following commands loads a kernel module along with any required dependency",
       "modules?"

@@ -16,6 +16,8 @@ h1 {
 .navdiv {
 	background-color: #3f51b5;
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	display: flex;
+  justify-content: center;
 }
 
 button {
@@ -24,4 +26,7 @@ button {
 	border-radius: 0px !important;
 }
 
-.aboutB, .exitB{float: right;}
+.aboutB, .exitB{}
+
+.navbutton {
+}
