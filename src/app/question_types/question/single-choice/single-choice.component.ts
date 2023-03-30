@@ -31,14 +31,15 @@ export class SingleChoiceComponent implements OnInit, OnDestroy {
   }
 
   setRadioButtonState(state : any) : void {
-    this.checkedList = state.state.answer;
+    this.checkedList = state.type === 'SCQ' ? state.content : [false,false,false,false,false];
+    if      (state.type === 'ANSWER_DISABLED') { this.buttonsDisabled = true;  }
+    else if (state.type === 'ANSWER_ENABLED')  { this.buttonsDisabled = false; }
   }
 
   onCheckBoxClicked(event : any, id : number) {
     this.givenAnswer = [false, false, false, false, false]
     this.givenAnswer[id] = true;
     this.CommS.changeAnswer(this.givenAnswer);
-    console.log(this.givenAnswer)
   }
 
   ngOnDestroy() {

@@ -50,101 +50,98 @@ export class QuestionComponent implements OnInit, OnDestroy{
     }
 
     ngOnInit() {
-        this.ClickSubscription   = this.CommS.getClickEvent().subscribe((button : string) => { this.QButtonPressed(button); 
-                                                                                               this.CheckButtonPressed(button);});
+        this.ClickSubscription   = this.CommS.getClickEvent().subscribe((button : string) => { this.ButtonPressed(button); });
         this.QModeSubscription   = this.CommS.getQModeEvent().subscribe((mode : string)   => { this.SetQMode(mode); });
         this.AnswerSubscription  = this.CommS.currentAnswer.subscribe((answer) => {this.givenAnswer = answer});
-        this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => capsule = this.sendCapsule);        
+        this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => capsule = this.sendCapsule);       
     }
 
     SetQMode(mode : string) : void {
-        this.QSet = this.DataS.getQSetMixed(mode);
-        this._resetParameters();
+        this.QSet     = this.DataS.getQSetMixed(mode);
+        this.progress = this._getCurrentProgress();
+        this._UpdateQuestionView();
     }
 
-    QButtonPressed(BPressed : string) : void {
-        this.currentQ      += BPressed === 'NEXT'  ? 1 : (BPressed === 'BACK' ? - 1 : 0);
-        
-        this.checkPushGivenAnswer(BPressed, this.givenAnswer);
-
-        let checkCapsule = BPressed !== 'CHECK' ? { target : 'CHECK', disabled : false } : { target : 'CHECK', disabled : true };
-
-        this.setWorkedQuestionState(this.QSet[this.currentQ].qtyp);
-
-        this.CommS.sendButtonState(checkCapsule);
-        this._resetParameters();
-        this._checkSetButtonState();
+    ButtonPressed(BPressed : string) : void {
+        this._updateCurrentQuestion(BPressed);
+        this._checkAnswered();
     }
 
-    CheckButtonPressed(BPressed : string) : void {
-        if (BPressed === 'CHECK' && this.QSet[this.currentQ].qtyp === 'SCQ') {
-            this.CommS.sendButtonState({ target : 'CHECK', disabled : true });
-            this.totalGivenAnswers.push({ answer : this.givenAnswer, checked : true })
-            for (let n = 0; n < this.givenAnswer.length; n++) {
-                if (this._getCorrectAnswers()[n] === true) { 
-                    this._setAnsColor(('RadioInputID_' + n), '#49fb35');
-                }
-                if (this._getCorrectAnswers()[n] === false && this.givenAnswer[n] === true) {
-                    this._setAnsColor(('RadioInputID_' + n), 'purple');
-                }
-            }
-        }
-        this.givenAnswer  = [false, false, false, false, false];
-    }
-
-    checkPushGivenAnswer(BPressed : string, answer : any) : void {
-        if (this.currentQ > this.answerCeiling){
-            if (this.QSet[this.currentQ].qtyp === 'MCQ' || this.QSet[this.currentQ].qtyp === 'SCQ'){
-                this.totalGivenAnswers.push({ answer : answer, checked : });
-            }
-            else {
-                answer = ''
-                this.totalGivenAnswers.push({ answer : answer});
-            }
-        }
-        this.answerCeiling += BPressed === 'NEXT' && this.currentQ > this.answerCeiling ? 1 : 0;
-    }
-
-    private setWorkedQuestionState(qtype : string) {
-        if (this.currentQ < this.answerCeiling) {
-            this.CommS.sendACIstate({ target : qtype, state : this.totalGivenAnswers[this.currentQ]});
+    private _updateCurrentQuestion(button : string){
+        switch(button) {
+            case 'NEXT'  : { this._nextPressed();  break; }
+            case 'BACK'  : { this._backPressed();  break; }
+            case 'CHECK' : { this._checkPressed(); break; }
+                default  : { break; }
         }
     }
-    
-    private _resetParameters() : void {
+
+    private _nextPressed() : void {
+        this.currentQ    = this.currentQ <   this.QSet.length - 1 ? this.currentQ + 1 : this.currentQ;
+        let nextBDisable = this.currentQ === this.QSet.length - 1 ? this._DisableButton('NEXT', true)  : (()=>{});
+        let backBEnable  = this.currentQ <   this.QSet.length - 1 ? this._DisableButton('BACK', false) : (()=>{});
+        this._UpdateQuestionView();
+    }
+
+    private _backPressed() : void {
+        this.currentQ    = this.currentQ !== 0              ? this.currentQ - 1 : this.currentQ;
+        let backBDisable = this.currentQ === 0              ? this._DisableButton('BACK', true)  : (()=>{});
+        let nextBEnable  = this.currentQ < this.QSet.length ? this._DisableButton('NEXT', false) : (()=>{});
+        this._UpdateQuestionView();
+    }
+
+    private _checkPressed() : void {
+        this.totalGivenAnswers[this.currentQ] = { answer : this.givenAnswer, checked : true };
+    }
+
+    private _UpdateQuestionView() : void {
         this.questionText = this.QSet[this.currentQ].qtxt;
         this.questionType = this.QSet[this.currentQ].qtyp;
         this.progress     = this._getCurrentProgress();
         this.SendAnswers(this._makeCapsule(this.QSet[this.currentQ]));
     }
 
+    private _DisableButton(target : string, disabled : boolean) : void {
+        this.CommS.sendButtonState({ target : target, disabled : disabled });
+    }
+
+    private _checkAnswered() : void {
+        let Cdis = (b : boolean) => this._DisableButton('CHECK', b);
+        let checkEnabled = typeof this.totalGivenAnswers[this.currentQ] !== 'undefined' ? Cdis(true) : Cdis(false);
+        if (typeof this.totalGivenAnswers[this.currentQ] !== 'undefined') {
+            this._highlightAnswer();
+            this.CommS.sendACIstate({type : 'ANSWER_DISABLED', content : []});
+            this.CommS.sendACIstate({type : 'SCQ', content : this.totalGivenAnswers[this.currentQ].answer});
+        }
+        else if (typeof this.totalGivenAnswers[this.currentQ] === 'undefined') {
+            this.CommS.sendACIstate({type : 'ANSWER_ENABLED', content : []});
+            this.CommS.sendACIstate({type : 'SCQ', content : [false,false,false,false,false]});
+        }
+    }
+
+    private _highlightAnswer() {
+        for (let a = 0; a < this._getCorrectAnswer().length; a++) {
+            if (this._getCorrectAnswer()[a] === true){
+                this._setAnsColor('RadioInputID_' + a, '#8dfcb1')
+            }
+            if (this.totalGivenAnswers[this.currentQ].answer[a] === true && this._getCorrectAnswer()[a] === false) {
+                this._setAnsColor('RadioInputID_' + a, '#e8649b')
+            }
+        }
+    }
+
     private _setAnsColor(docID : string, color : string) : void {
-        let getEl = document.getElementById(docID) as HTMLElement;
+        let getEl = document.getElementById(docID)!.parentElement as HTMLElement;
         getEl?.style.setProperty('background-color', color);
         getEl?.style.setProperty('border-radius', '3px');
     }
 
-    private _getCorrectAnswers() : boolean[] {
+    private _getCorrectAnswer() : boolean[] {
         let correctAnswers : boolean[] = [];
         for (let a of this.DataS._getAnswerSet(this.QSet[this.currentQ].qid)) {
             correctAnswers.push(a);
         }
         return correctAnswers;
-    }
-
-    private _checkSetButtonState() : void {
-        if (this.currentQ === this.QSet.length - 1) {
-            this.CommS.sendButtonState({ target : 'NEXT',  disabled : true });
-            this.CommS.sendButtonState({ target : 'CHECK', disabled : false });
-        }
-        else if (this.currentQ < 1) {
-            this.CommS.sendButtonState({ target : 'BACK',  disabled : true });
-            this.CommS.sendButtonState({ target : 'CHECK', disabled : false });
-        }
-        else {
-            this.CommS.sendButtonState({ target : 'NEXT', disabled : false });
-            this.CommS.sendButtonState({ target : 'BACK', disabled : false });
-        }
     }
 
     private _getCurrentProgress() : number {
