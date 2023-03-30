@@ -1,3 +1,9 @@
 <div *ngFor="let ans of getCapsule.ansTxt; let i = index">
-	<p><mat-checkbox [id]="'InputID_' + i" class="checkbox" (change)="onCheckBoxClicked($event, i)">{{ans}}</mat-checkbox></p>
+	<p><mat-checkbox 
+		[id]="'InputID_' + i" 
+		class="checkbox" 
+		(change)="onCheckBoxClicked($event, i)"
+		[disabled]="buttonsDisabled"
+		[checked]="checkedList[i] === true"
+		>{{ans}}</mat-checkbox></p>
 </div>

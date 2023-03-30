@@ -9,11 +9,10 @@ p {
 	margin-right: 30px;
 }
 
-.dot {
-  color: ff4081;
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
+.correct {
+  background-color: #8dfcb1;
+}
+
+.wrong {
+	background-color: #e8649b;
 }

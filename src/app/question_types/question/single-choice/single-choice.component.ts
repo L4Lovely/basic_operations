@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input, Output, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output } from '@angular/core';
 import { QuestioneerService} from '../../../questioneer.service';
 import { QEmitterService } from '../../../qemitter.service';
 import { Capsule } from '../../../structs/transferStructs';  
@@ -19,9 +19,11 @@ export class SingleChoiceComponent implements OnInit, OnDestroy {
   CapsuleSubscription    : any;
   ACIControlSubscription : any;
 
+  @Input() correctAnswer? : any;
+
   constructor(private CommS: QEmitterService) {
     this.buttonsDisabled = false;
-    this.givenAnswer = [false, true, false, false, false]
+    this.givenAnswer = [false, false, false, false, false]
     this.getCapsule = { ansTxt: [''], ansType : '' };
   }
 

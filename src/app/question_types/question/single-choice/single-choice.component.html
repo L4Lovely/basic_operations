@@ -1,5 +1,7 @@
 
-  <div *ngFor="let ans of getCapsule.ansTxt; let i = index">
+  <div *ngFor="let ans of getCapsule.ansTxt; let i = index"
+  [class.correct]="buttonsDisabled && correctAnswer[i] === true" 
+  [class.wrong]="buttonsDisabled && correctAnswer[i] === false && checkedList[i] === true">
     <p><mat-radio-button [id]="'RadioInputID_' + i" 
                           class="radiobuttons" 
                           value="1" 

@@ -15,6 +15,9 @@ import { Subscription }             from 'rxjs';
 })
 
 export class QuestionComponent implements OnInit, OnDestroy{
+    
+    @Input() qCorrectAnswer? : any;
+
     sendCapsule   : Capsule;
 
     QSet          : Question[] = [];
@@ -35,10 +38,9 @@ export class QuestionComponent implements OnInit, OnDestroy{
     answerCeiling       : number;
 
     constructor (private DataS : QuestioneerService, private CommS : QEmitterService, private BStateC : BStateCheckerService) {
-        this.answerCeiling     = 0;
+        [this.answerCeiling, this.currentQ] = [0,0];
         this.totalGivenAnswers = []
         this.givenAnswer  = [false, false, false , false, false];
-        this.currentQ     = 0;
         this.QMode        = '';
         this.checkPressed = false;
         this.progress     = this._getCurrentProgress();
@@ -64,7 +66,7 @@ export class QuestionComponent implements OnInit, OnDestroy{
 
     ButtonPressed(BPressed : string) : void {
         this._updateCurrentQuestion(BPressed);
-        this._checkAnswered();
+        this._checkAnswered(this.QSet[this.currentQ].qtyp);
     }
 
     private _updateCurrentQuestion(button : string){
@@ -77,15 +79,15 @@ export class QuestionComponent implements OnInit, OnDestroy{
     }
 
     private _nextPressed() : void {
-        this.currentQ    = this.currentQ <   this.QSet.length - 1 ? this.currentQ + 1 : this.currentQ;
+        this.currentQ    = this.currentQ  <  this.QSet.length - 1 ? this.currentQ + 1 : this.currentQ;
         let nextBDisable = this.currentQ === this.QSet.length - 1 ? this._DisableButton('NEXT', true)  : (()=>{});
-        let backBEnable  = this.currentQ <   this.QSet.length - 1 ? this._DisableButton('BACK', false) : (()=>{});
+        let backBEnable  = this.currentQ  <  this.QSet.length - 1 ? this._DisableButton('BACK', false) : (()=>{});
         this._UpdateQuestionView();
     }
 
     private _backPressed() : void {
-        this.currentQ    = this.currentQ !== 0              ? this.currentQ - 1 : this.currentQ;
-        let backBDisable = this.currentQ === 0              ? this._DisableButton('BACK', true)  : (()=>{});
+        this.currentQ    = this.currentQ !== 0 ? this.currentQ - 1 : this.currentQ;
+        let backBDisable = this.currentQ === 0 ? this._DisableButton('BACK', true)  : (()=>{});
         let nextBEnable  = this.currentQ < this.QSet.length ? this._DisableButton('NEXT', false) : (()=>{});
         this._UpdateQuestionView();
     }
@@ -105,35 +107,18 @@ export class QuestionComponent implements OnInit, OnDestroy{
         this.CommS.sendButtonState({ target : target, disabled : disabled });
     }
 
-    private _checkAnswered() : void {
+    private _checkAnswered(Qtype : string) : void {
         let Cdis = (b : boolean) => this._DisableButton('CHECK', b);
         let checkEnabled = typeof this.totalGivenAnswers[this.currentQ] !== 'undefined' ? Cdis(true) : Cdis(false);
         if (typeof this.totalGivenAnswers[this.currentQ] !== 'undefined') {
-            this._highlightAnswer();
+            this.qCorrectAnswer = this._getCorrectAnswer();
             this.CommS.sendACIstate({type : 'ANSWER_DISABLED', content : []});
-            this.CommS.sendACIstate({type : 'SCQ', content : this.totalGivenAnswers[this.currentQ].answer});
+            this.CommS.sendACIstate({type : Qtype, content : this.totalGivenAnswers[this.currentQ].answer});
         }
         else if (typeof this.totalGivenAnswers[this.currentQ] === 'undefined') {
             this.CommS.sendACIstate({type : 'ANSWER_ENABLED', content : []});
-            this.CommS.sendACIstate({type : 'SCQ', content : [false,false,false,false,false]});
+            this.CommS.sendACIstate({type : Qtype, content : [false,false,false,false,false]});
         }
-    }
-
-    private _highlightAnswer() {
-        for (let a = 0; a < this._getCorrectAnswer().length; a++) {
-            if (this._getCorrectAnswer()[a] === true){
-                this._setAnsColor('RadioInputID_' + a, '#8dfcb1')
-            }
-            if (this.totalGivenAnswers[this.currentQ].answer[a] === true && this._getCorrectAnswer()[a] === false) {
-                this._setAnsColor('RadioInputID_' + a, '#e8649b')
-            }
-        }
-    }
-
-    private _setAnsColor(docID : string, color : string) : void {
-        let getEl = document.getElementById(docID)!.parentElement as HTMLElement;
-        getEl?.style.setProperty('background-color', color);
-        getEl?.style.setProperty('border-radius', '3px');
     }
 
     private _getCorrectAnswer() : boolean[] {

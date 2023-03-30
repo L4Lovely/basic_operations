@@ -9,11 +9,11 @@
 
 <div class="answerdiv">
 	<div *ngIf="questionType === 'MCQ';">
-	<app-multiple-choice></app-multiple-choice>
+	<app-multiple-choice ></app-multiple-choice>
 	</div>
 
 	<div *ngIf="questionType === 'SCQ';">
-	<app-single-choice></app-single-choice>
+	<app-single-choice [correctAnswer]="qCorrectAnswer"></app-single-choice>
 	</div>
 
 	<div *ngIf="questionType === 'FIQ';">
