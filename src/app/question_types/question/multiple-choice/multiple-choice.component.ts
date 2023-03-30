@@ -8,14 +8,27 @@ import { Capsule } from '../../../structs/transferStructs';
   templateUrl: './multiple-choice.component.html',
   styleUrls: ['./multiple-choice.component.css']
 })
-export class MultipleChoiceComponent implements OnInit{
+export class MultipleChoiceComponent implements OnInit, OnDestroy{
   getCapsule : Capsule;
+  CapsuleSubscription : any;
+
+  givenAnswer : boolean[];
 
   constructor(private CommS: QEmitterService){
-    this.getCapsule = { ansTxt: [''], ansType : '' };
+    this.getCapsule  = { ansTxt: [''], ansType : '' };
+    this.givenAnswer = [false, false, false, false, false]
   }
 
   ngOnInit() {
-    this.CommS.currentMessage.subscribe(capsule => this.getCapsule = capsule);
+    this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => this.getCapsule = capsule);
+  }
+
+  ngOnDestroy() {
+    this.CapsuleSubscription.unsubscribe();
+  }
+
+  onCheckBoxClicked(event : any, id : number){
+    this.givenAnswer[id] = event.checked;
+    this.CommS.changeAnswer(this.givenAnswer);
   }
 }

@@ -1,7 +1,7 @@
 <div class="menudiv" [hidden]="!quizHidden">
-	<button routerLink="single_choice_quiz" class="lma_button" (click)="onClick('SCQ')" mat-stroked-button="basic">Single Choice</button>
+	<button routerLink="single_choice_quiz"   class="lma_button" (click)="onClick('SCQ')" mat-stroked-button="basic">Single Choice</button>
 	<button routerLink="multiple_choice_quiz" class="lma_button" (click)="onClick('MCQ')" mat-stroked-button="basic">Multiple Choice</button>
-	<button routerLink="fill_in_quiz" class="lma_button" (click)="onClick('FIQ')" mat-stroked-button="basic">Fill-in Set</button>
-	<button routerLink="mixed_quiz" class="lma_button" (click)="onClick('ALL')" mat-stroked-button="basic">All Mixed</button>
+	<button routerLink="fill_in_quiz" 		  class="lma_button" (click)="onClick('FIQ')" mat-stroked-button="basic">Fill-in Set</button>
+	<button routerLink="mixed_quiz" 		  class="lma_button" (click)="onClick('ALL')" mat-stroked-button="basic">All Mixed</button>
 </div>
-<app-sequencer [hidden]="quizHidden" quizTitle="{{sequencerTitle}}" [solutionDisabled]="false"></app-sequencer>
+<app-sequencer [hidden]="quizHidden" quizTitle="{{sequencerTitle}}" [solutionHidden]="false"></app-sequencer>

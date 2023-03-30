@@ -8,6 +8,4 @@ import { NavbarComponent} from './navbar/navbar.component';
 })
 export class AppComponent {
   title = 'basic_operations';
-
-  
 }

@@ -10,16 +10,33 @@ export class QEmitterService {
 
   defaultButtonState? : ButtonStateCapsule = { target : '', disabled : false };
   defaultCapsule      : Capsule            = { ansTxt : [''], ansType : '' }
-  defaultQmode?       : string            = '';
+  defaultQmode?       : string             = '';
+  defaultAnswer       : any                = [false, false, false, false, false];
 
   private messageSource = new BehaviorSubject(this.defaultCapsule);
   currentMessage        = this.messageSource.asObservable();
 
-  private BSubject   = new Subject<any>();
-  private BState     = new Subject<any>();
-  private QModeState = new Subject<any>();
+  private answerSource  = new BehaviorSubject(this.defaultAnswer);
+  currentAnswer         = this.answerSource.asObservable();
 
-  constructor() { 
+  private BSubject      = new Subject<any>();
+  private BState        = new Subject<any>();
+  private QModeState    = new Subject<any>();
+  private AnswerControl = new Subject<any>();
+
+  constructor() {
+  }
+
+  getACInputs() : Observable<any>{
+    return this.AnswerControl.asObservable();
+  }
+  
+  sendACIstate(state : any) : void {
+    this.AnswerControl.next(state);
+  }
+
+  changeAnswer(answer : any) : void {
+    this.answerSource.next(answer);
   }
 
   //learn-mode components -> question.component

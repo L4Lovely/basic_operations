@@ -18,8 +18,16 @@ export class QuestioneerService implements OnInit {
     data_MCQ : any = LPI_MCQ_DATA;
     data_ALL : any = LPI_ALL_DATA;
 
-    constructor(){}
-    ngOnInit(){}
+    currentQ_Data       : any;
+    currentQSet_rndNums : any;
+
+    constructor() {
+        this.currentQ_Data = [];
+    }
+
+    ngOnInit() {
+       
+    }
 
     //generates a mixed set of Question[]
     private _generateQSetMixed(datafile : string) : Question[]{
@@ -29,6 +37,9 @@ export class QuestioneerService implements OnInit {
                                     (datafile === 'FIQ' ? this.data_FIQ : null)))
         let questions : Question[] = [];
         let rndNums   : number[]   = this._getQNumberArray(dataSet).sort(() => Math.random() - 0.5);
+        
+        this.currentQ_Data       = dataSet;
+        this.currentQSet_rndNums = rndNums;
 
         for (let num in rndNums){
             let q : Question = {qid   : dataSet[rndNums[num]].qid,
@@ -41,12 +52,21 @@ export class QuestioneerService implements OnInit {
         return questions;
     }
 
+    _getAnswerSet(id : number) : any {
+        for (let i = 0; i < this.currentQ_Data.length; i++) {
+            if (id === this.currentQ_Data[i].qid){
+                return (() => {let a = []; for(let ans of this.currentQ_Data[i].qanswers){a.push(ans.correct)} return a;})();
+                break;
+            }
+        }
+    }
+
     //get json data set length and transform it into a number[]
     private _getQNumberArray(dataSet : any) : number[]{
         return [...Array(dataSet.length).keys()];
     }
 
     getQSetMixed(datafile : string) : Question[]{
-      return this._generateQSetMixed(datafile);
+        return this._generateQSetMixed(datafile);
     }
 }

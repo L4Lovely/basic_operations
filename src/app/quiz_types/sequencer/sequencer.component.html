@@ -8,7 +8,7 @@
 
 	<div class="buttonbox">
 	<button (click)="onBack()" class="previous" mat-flat-button color="primary" [disabled]="backDisabled">back</button>
-	<button (click)="onCheck()" class="solution" mat-flat-button color="accent" [hidden]="solutionDisabled">check</button>
+	<button (click)="onCheck()" class="solution" mat-flat-button color="accent" [disabled]="solutionDisabled" [hidden]="solutionHidden">check</button>
 	<button (click)="onNext()" class="next" mat-flat-button color="primary"		[disabled]="nextDisabled">next</button>
 	</div>
 </mat-card>

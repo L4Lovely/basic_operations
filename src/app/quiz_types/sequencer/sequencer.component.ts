@@ -10,10 +10,12 @@ import { ButtonStateCapsule }       from '../../structs/buttonStateCapsule';
 
 export class SequencerComponent implements OnInit, OnDestroy{
     @Input() quizTitle?        : string;
+    @Input() solutionHidden?   : boolean;
     @Input() solutionDisabled? : boolean;
     @Input() backDisabled?     : boolean;
     @Input() nextDisabled?     : boolean;
 
+    ACIControlSubscription : any;
     BStateSubscription : any;
 
     constructor(private CommS : QEmitterService){
@@ -26,8 +28,16 @@ export class SequencerComponent implements OnInit, OnDestroy{
     }
 
     setButtonState(stateCapsule : ButtonStateCapsule) : void {
-      this.nextDisabled = stateCapsule.target === 'NEXT' && stateCapsule.disabled === true ? true : false;
-      this.backDisabled = stateCapsule.target === 'BACK' ? stateCapsule.disabled : false;
+      if (stateCapsule.target === 'NEXT') {
+        this.nextDisabled     = stateCapsule.target === 'NEXT' && stateCapsule.disabled === true ? true : false;
+      }
+      else if (stateCapsule.target === 'BACK') {
+        this.backDisabled     = stateCapsule.target === 'BACK' && stateCapsule.disabled === true ? true : false;
+      }
+      else if (stateCapsule.target === 'CHECK') {
+        this.solutionDisabled = stateCapsule.target === 'CHECK'&& stateCapsule.disabled === true ? true : false;
+      }
+      else {}
     }
 
     onNext() : void {
