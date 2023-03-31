@@ -26,7 +26,6 @@ export class QuestioneerService implements OnInit {
     }
 
     ngOnInit() {
-       
     }
 
     //generates a mixed set of Question[]

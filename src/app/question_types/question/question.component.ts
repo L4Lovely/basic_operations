@@ -17,6 +17,7 @@ import { Subscription }             from 'rxjs';
 export class QuestionComponent implements OnInit, OnDestroy{
     
     @Input() qCorrectAnswer? : any;
+    @Input() qCorrectString? : any;
 
     sendCapsule   : Capsule;
 
@@ -60,11 +61,11 @@ export class QuestionComponent implements OnInit, OnDestroy{
         this.givenAnswer = [false, false, false, false, false]
         this.QSet     = this.DataS.getQSetMixed(mode);
         this.progress = this._getCurrentProgress();
+        this.qCorrectString = this.QSet[this.currentQ].qtyp === 'FIQ' ? this.QSet[this.currentQ].qans[0][0] : '';
         this._UpdateQuestionView();     
     }
 
     ButtonPressed(BPressed : string) : void {
-        console.log(this.DataS._getAnswerSet(this.QSet[this.currentQ].qid))
         this._updateCurrentQuestion(BPressed);
         this._checkAnswered(this.QSet[this.currentQ].qtyp, BPressed);
         let Cdis = (b : boolean) => this._DisableButton('CHECK', b);
@@ -75,7 +76,7 @@ export class QuestionComponent implements OnInit, OnDestroy{
         switch(button) {
             case 'NEXT'  : { this._nextPressed();  break; }
             case 'BACK'  : { this._backPressed();  break; }
-            case 'CHECK' : { this._checkPressed(); break; }
+            case 'CHECK' : { this._submitAnswer(); break; }
                 default  : { break; }
         }
     }
@@ -86,6 +87,7 @@ export class QuestionComponent implements OnInit, OnDestroy{
         let nextBDisable = this.currentQ === this.QSet.length - 1 ? this._DisableButton('NEXT', true)  : (()=>{});
         let backBEnable  = this.currentQ  <  this.QSet.length - 1 ? this._DisableButton('BACK', false) : (()=>{});
         this.qCorrectAnswer = this._getCorrectAnswer();
+        this.qCorrectString = this.QSet[this.currentQ].qtyp === 'FIQ' ? this.QSet[this.currentQ].qans[0][0] : '';
         this._UpdateQuestionView();
     }
 
@@ -93,11 +95,13 @@ export class QuestionComponent implements OnInit, OnDestroy{
         this.givenAnswer = [false,false,false,false,false];
         this.currentQ    = this.currentQ !== 0 ? this.currentQ - 1 : this.currentQ;
         let backBDisable = this.currentQ === 0 ? this._DisableButton('BACK', true)  : (()=>{});
-        let nextBEnable  = this.currentQ < this.QSet.length ? this._DisableButton('NEXT', false) : (()=>{});
+        let nextBEnable  = this.currentQ  <  this.QSet.length ? this._DisableButton('NEXT', false) : (()=>{});
+        this.qCorrectAnswer = this._getCorrectAnswer();
+        this.qCorrectString = this.QSet[this.currentQ].qtyp === 'FIQ' ? this.QSet[this.currentQ].qans[0][0] : '';
         this._UpdateQuestionView();
     }
 
-    private _checkPressed() : void {
+    private _submitAnswer() : void {
         this.totalGivenAnswers[this.currentQ] = { answer : this.givenAnswer, checked : true };
     }
 
@@ -115,6 +119,7 @@ export class QuestionComponent implements OnInit, OnDestroy{
     private _checkAnswered(Qtype : string, buttonPressed : string) : void {
         if (typeof this.totalGivenAnswers[this.currentQ] !== 'undefined') {
             this.qCorrectAnswer = this._getCorrectAnswer();
+            this.qCorrectString = this.QSet[this.currentQ].qtyp === 'FIQ' ? this.QSet[this.currentQ].qans[0][0] : '';
             this.CommS.sendACIstate({type : 'ANSWER_DISABLED', content : []});
             this.CommS.sendACIstate({type : Qtype, content : this.totalGivenAnswers[this.currentQ].answer});
         }

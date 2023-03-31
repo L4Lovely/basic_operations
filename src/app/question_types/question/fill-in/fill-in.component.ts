@@ -21,6 +21,7 @@ export class FillInComponent implements OnInit, OnDestroy {
   BStateSubscription      : any;
 
   @Input() correctAnswer? : any;
+  @Input() correctString? : any;
 
   constructor(private CommS: QEmitterService) {
     this.buttonsDisabled = false;
@@ -43,13 +44,13 @@ export class FillInComponent implements OnInit, OnDestroy {
   onLabelInput(event : any) {
     this.givenAnswer[0] = event.target.value
     this.CommS.changeAnswer(this.givenAnswer);
-    console.log(this.correctAnswer)
   }
 
   onQuestionButtonPress(button : any){
     if (button.target !== 'CHECK'){
       this.givenAnswer = [''];
     }
+    console.log(this.correctString)
   }
 
   ngOnDestroy() {
