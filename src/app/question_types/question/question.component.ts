@@ -35,38 +35,40 @@ export class QuestionComponent implements OnInit, OnDestroy{
     totalGivenAnswers   : Answer[];
     givenAnswer         : boolean[];
     checkPressed        : boolean;
-    answerCeiling       : number;
 
     constructor (private DataS : QuestioneerService, private CommS : QEmitterService, private BStateC : BStateCheckerService) {
-        [this.answerCeiling, this.currentQ] = [0,0];
+        this.currentQ          = 0;
         this.totalGivenAnswers = []
-        this.givenAnswer  = [false, false, false , false, false];
-        this.QMode        = '';
-        this.checkPressed = false;
-        this.progress     = this._getCurrentProgress();
-        this.QSet         = DataS.getQSetMixed('ALL');
-        this.questionText = this.QSet[this.currentQ].qtxt;
-        this.questionType = this.QSet[this.currentQ].qtyp;
-        this.sendCapsule  = this._makeCapsule(this.QSet[this.currentQ]);
-        this.progress     = this._getCurrentProgress();
+        this.givenAnswer       = [false, false, false , false, false];
+        this.QMode             = '';
+        this.checkPressed      = false;
+        this.QSet              = DataS.getQSetMixed('ALL');
+        this.questionText      = this.QSet[this.currentQ].qtxt;
+        this.questionType      = this.QSet[this.currentQ].qtyp;
+        this.sendCapsule       = this._makeCapsule(this.QSet[this.currentQ]);
+        this.progress          = this._getCurrentProgress();
     }
 
     ngOnInit() {
         this.ClickSubscription   = this.CommS.getClickEvent().subscribe((button : string) => { this.ButtonPressed(button); });
         this.QModeSubscription   = this.CommS.getQModeEvent().subscribe((mode : string)   => { this.SetQMode(mode); });
-        this.AnswerSubscription  = this.CommS.currentAnswer.subscribe((answer) => {this.givenAnswer = answer});
-        this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => capsule = this.sendCapsule);       
+        this.AnswerSubscription  = this.CommS.currentAnswer.subscribe((answer) => { this.givenAnswer = answer });
+        this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => capsule = this.sendCapsule); 
     }
 
     SetQMode(mode : string) : void {
+        this.givenAnswer = [false, false, false, false, false]
         this.QSet     = this.DataS.getQSetMixed(mode);
         this.progress = this._getCurrentProgress();
-        this._UpdateQuestionView();
+        this._UpdateQuestionView();     
     }
 
     ButtonPressed(BPressed : string) : void {
+        console.log(this.DataS._getAnswerSet(this.QSet[this.currentQ].qid))
         this._updateCurrentQuestion(BPressed);
-        this._checkAnswered(this.QSet[this.currentQ].qtyp);
+        this._checkAnswered(this.QSet[this.currentQ].qtyp, BPressed);
+        let Cdis = (b : boolean) => this._DisableButton('CHECK', b);
+        let checkEnabled = typeof this.totalGivenAnswers[this.currentQ] !== 'undefined' ? Cdis(true) : Cdis(false);
     }
 
     private _updateCurrentQuestion(button : string){
@@ -79,13 +81,16 @@ export class QuestionComponent implements OnInit, OnDestroy{
     }
 
     private _nextPressed() : void {
+        this.givenAnswer = [false,false,false,false,false];
         this.currentQ    = this.currentQ  <  this.QSet.length - 1 ? this.currentQ + 1 : this.currentQ;
         let nextBDisable = this.currentQ === this.QSet.length - 1 ? this._DisableButton('NEXT', true)  : (()=>{});
         let backBEnable  = this.currentQ  <  this.QSet.length - 1 ? this._DisableButton('BACK', false) : (()=>{});
+        this.qCorrectAnswer = this._getCorrectAnswer();
         this._UpdateQuestionView();
     }
 
     private _backPressed() : void {
+        this.givenAnswer = [false,false,false,false,false];
         this.currentQ    = this.currentQ !== 0 ? this.currentQ - 1 : this.currentQ;
         let backBDisable = this.currentQ === 0 ? this._DisableButton('BACK', true)  : (()=>{});
         let nextBEnable  = this.currentQ < this.QSet.length ? this._DisableButton('NEXT', false) : (()=>{});
@@ -107,9 +112,7 @@ export class QuestionComponent implements OnInit, OnDestroy{
         this.CommS.sendButtonState({ target : target, disabled : disabled });
     }
 
-    private _checkAnswered(Qtype : string) : void {
-        let Cdis = (b : boolean) => this._DisableButton('CHECK', b);
-        let checkEnabled = typeof this.totalGivenAnswers[this.currentQ] !== 'undefined' ? Cdis(true) : Cdis(false);
+    private _checkAnswered(Qtype : string, buttonPressed : string) : void {
         if (typeof this.totalGivenAnswers[this.currentQ] !== 'undefined') {
             this.qCorrectAnswer = this._getCorrectAnswer();
             this.CommS.sendACIstate({type : 'ANSWER_DISABLED', content : []});
@@ -121,8 +124,8 @@ export class QuestionComponent implements OnInit, OnDestroy{
         }
     }
 
-    private _getCorrectAnswer() : boolean[] {
-        let correctAnswers : boolean[] = [];
+    private _getCorrectAnswer() : any {
+        let correctAnswers : any = [];
         for (let a of this.DataS._getAnswerSet(this.QSet[this.currentQ].qid)) {
             correctAnswers.push(a);
         }

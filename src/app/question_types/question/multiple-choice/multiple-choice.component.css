@@ -6,3 +6,11 @@
 p {
 	margin-right: 30px;
 }
+
+.correct {
+  background-color: #8dfcb1;
+}
+
+.wrong {
+	background-color: #e8649b;
+}

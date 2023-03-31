@@ -1,6 +1,6 @@
 <mat-form-field class="fillinbox" appearance="fill">
   <mat-label>write answer</mat-label>
-  <input matInput placeholder="here">
+  <input matInput placeholder="here" (input)="onLabelInput($event)">
   <mat-icon matSuffix>🖉</mat-icon>
   <mat-hint>Fill-In</mat-hint>
 </mat-form-field>

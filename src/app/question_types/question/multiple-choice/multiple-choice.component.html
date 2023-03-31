@@ -1,5 +1,7 @@
-<div *ngFor="let ans of getCapsule.ansTxt; let i = index">
-	<p><mat-checkbox 
+<div *ngFor="let ans of getCapsule.ansTxt; let i = index"
+	   [class.correct]="buttonsDisabled && correctAnswer[i] === true" 
+  	   [class.wrong]="buttonsDisabled && correctAnswer[i] === false && checkedList[i] === true">
+	<p><mat-checkbox
 		[id]="'InputID_' + i" 
 		class="checkbox" 
 		(change)="onCheckBoxClicked($event, i)"

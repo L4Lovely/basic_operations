@@ -8,16 +8,16 @@
 <p class="answerheadline">Your answer:</p>
 
 <div class="answerdiv">
-	<div *ngIf="questionType === 'MCQ';">
-	<app-multiple-choice ></app-multiple-choice>
+	<div [style.visibility]="questionType === 'MCQ' ? 'visible' : 'hidden'" [style.display]="questionType === 'MCQ' ? 'block' : 'none'">
+	<app-multiple-choice [correctAnswer]="qCorrectAnswer"></app-multiple-choice>
 	</div>
 
-	<div *ngIf="questionType === 'SCQ';">
+	<div [style.visibility]="questionType === 'SCQ'  ? 'visible' : 'hidden'" [style.display]="questionType === 'SCQ' ? 'block' : 'none'">
 	<app-single-choice [correctAnswer]="qCorrectAnswer"></app-single-choice>
 	</div>
 
-	<div *ngIf="questionType === 'FIQ';">
-	<app-fill-in></app-fill-in>
+	<div [style.visibility]="questionType === 'FIQ'  ? 'visible' : 'hidden'" [style.display]="questionType === 'FIQ' ? 'block' : 'none'">
+	<app-fill-in [correctAnswer]="qCorrectAnswer"></app-fill-in>
 	</div>
 </div>
 

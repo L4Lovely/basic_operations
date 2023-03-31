@@ -18,6 +18,7 @@ export class MultipleChoiceComponent implements OnInit, OnDestroy{
 
   CapsuleSubscription     : any;
   ACIControlSubscription  : any;
+  BStateSubscription      : any;
 
   @Input() correctAnswer? : any;
 
@@ -30,6 +31,7 @@ export class MultipleChoiceComponent implements OnInit, OnDestroy{
   ngOnInit() {
     this.CapsuleSubscription = this.CommS.currentMessage.subscribe(capsule => this.getCapsule = capsule);
     this.ACIControlSubscription = this.CommS.getACInputs().subscribe((state : any) => { this.setCheckButtonState(state); });
+    this.BStateSubscription = this.CommS.getButtonStateEvent().subscribe((button : string) => { this.onQuestionButtonPress(button); });
   }
 
   setCheckButtonState(state : any) : void {
@@ -39,11 +41,18 @@ export class MultipleChoiceComponent implements OnInit, OnDestroy{
   }
 
   onCheckBoxClicked(event : any, id : number) {
-    this.givenAnswer[id] = true;
-    this.CommS.changeAnswer(this.givenAnswer);
+    this.givenAnswer[id] = event.checked;
+    this.CommS.changeAnswer(this.givenAnswer); 
+  }
+
+  onQuestionButtonPress(button : any){
+    if (button.target !== 'CHECK'){
+      this.givenAnswer = [false,false,false,false,false];
+    }
   }
 
   ngOnDestroy() {
+    this.BStateSubscription.unsubscribe()
     this.CapsuleSubscription.unsubscribe();
     this.ACIControlSubscription.unsubscribe();
   }
