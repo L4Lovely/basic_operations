@@ -9,3 +9,39 @@
 .menudiv {
 	margin-top: 100px;
 }
+
+
+
+.modebutton {
+	display: block;
+	margin: 20px;
+}
+
+.modebuttondiv {
+	margin-top: 40px;
+	width: 220px;
+	max-width: 220px;
+	overflow-wrap: break-word;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modebuttonp {
+	word-wrap: break-word;
+	max-width: 200px;
+	margin-left: 20px;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+
+.modecard {
+	position: absolute;
+	left: 400px;
+	top: 178px;
+}
+
+.menudivider {
+	margin-left: 20px;
+	margin-right: 20px;
+}

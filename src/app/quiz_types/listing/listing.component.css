@@ -1,0 +1,87 @@
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; 
+	margin-left: 100px;
+}
+
+.div2 { grid-area: 1 / 2 / 2 / 3; 
+	margin: 50px;
+	width: 600px;
+}
+
+.div3 { grid-area: 1 / 3 / 2 / 4; 
+	margin-right: 100px;
+}
+
+.div1, .div2, .div3 {
+	margin-top: 100px;
+}
+
+.list1card, .list2card, .list3card {
+	padding: 30px;
+	height: 70vh;
+	margin-left   :50px;
+	margin-right  :50px;
+	margin-top 	  :50px;
+	margin-bottom :50px;
+
+  	overflow-y: auto;
+	margin: 10px;
+}
+
+.modebutton {
+	display: block;
+	margin: 20px;
+}
+
+.modebuttondiv {
+	margin-top: 40px;
+	width: 220px;
+	max-width: 220px;
+	overflow-wrap: break-word;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.modebuttonp {
+	word-wrap: break-word;
+	max-width: 200px;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.modecard {
+	position: absolute;
+	left: 400px;
+	top: 178px;
+}
+
+.menudivider {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.checkbutton {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.correct {
+  margin: 2px;
+  background-color: #8dfcb1;
+  border-radius: 3px;
+}
+
+.wrong {
+	margin: 2px;
+	background-color: #e8649b;
+	border-radius: 3px;
+}

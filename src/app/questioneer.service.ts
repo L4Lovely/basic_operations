@@ -1,11 +1,11 @@
-import { Injectable }              from '@angular/core';
-import { Injector }                from "@angular/core";
-import { Component, OnInit }       from '@angular/core';
-import { Question }                from './structs/questionStruct';
-import * as LPI_FIQ_DATA           from '../assets/questionbase/LPI2019-FIQ.json';
-import * as LPI_SCQ_DATA           from '../assets/questionbase/LPI2019-SCQ.json';
-import * as LPI_MCQ_DATA           from '../assets/questionbase/LPI2019-MCQ.json';
-import * as LPI_ALL_DATA           from '../assets/questionbase/LPI2019-ALL.json';
+import { Component, OnInit } from '@angular/core';
+import { Injectable }        from '@angular/core';
+import { Injector }          from "@angular/core";
+import { Question }          from './structs/questionStruct';
+import * as LPI_FIQ_DATA     from '../assets/questionbase/LPI2019-FIQ.json';
+import * as LPI_SCQ_DATA     from '../assets/questionbase/LPI2019-SCQ.json';
+import * as LPI_MCQ_DATA     from '../assets/questionbase/LPI2019-MCQ.json';
+import * as LPI_ALL_DATA     from '../assets/questionbase/LPI2019-ALL.json';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,23 @@
-<div class="menudiv" [hidden]="!quizHidden">
-	<button routerLink="single_choice_quiz"   class="lma_button" (click)="onClick('SCQ')" mat-stroked-button="basic">Single Choice</button>
-	<button routerLink="multiple_choice_quiz" class="lma_button" (click)="onClick('MCQ')" mat-stroked-button="basic">Multiple Choice</button>
-	<button routerLink="fill_in_quiz" 		  class="lma_button" (click)="onClick('FIQ')" mat-stroked-button="basic">Fill-in Set</button>
-	<button routerLink="mixed_quiz" 		  class="lma_button" (click)="onClick('ALL')" mat-stroked-button="basic">All Mixed</button>
+<div class="modebuttondiv" *ngIf="quizHidden">
+	<mat-card class="modecard">
+		<p></p>
+		<mat-divider></mat-divider>
+
+		<button routerLink="single_choice_quiz"   class="lma_button" (click)="onClick('SCQ')" mat-flat-button color="primary">Single Choice</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider class="menudivider"></mat-divider>
+		<button routerLink="multiple_choice_quiz" class="lma_button" (click)="onClick('MCQ')" mat-flat-button color="primary">Multiple Choice</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider class="menudivider"></mat-divider>
+		<button routerLink="fill_in_quiz" 		  class="lma_button" (click)="onClick('FIQ')" mat-flat-button color="primary">Fill-in Set</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider class="menudivider"></mat-divider>
+		<button routerLink="mixed_quiz" class="lma_button" (click)="onClick('ALL')" mat-flat-button color="primary">All Mixed</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider></mat-divider>
+		<p></p>
+
+	</mat-card>
 </div>
+
 <app-sequencer [hidden]="quizHidden" quizTitle="{{sequencerTitle}}" [solutionHidden]="false"></app-sequencer>

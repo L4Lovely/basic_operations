@@ -1,1 +1,74 @@
-<p>listing works!</p>
+<div class="modebuttondiv" *ngIf="mode === ''">
+	<mat-card class="modecard">
+		<p></p>
+		<mat-divider></mat-divider>
+
+		<button class="modebutton" mat-flat-button color="primary" (click)="onModeClick('SCQ')">Single Choice</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider class="menudivider"></mat-divider>
+		<button class="modebutton" mat-flat-button color="primary" (click)="onModeClick('MCQ')">Multiple Choice</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider class="menudivider"></mat-divider>
+		<button class="modebutton" mat-flat-button color="primary" (click)="onModeClick('FIQ')">Fill-In List</button>
+		<p class="modebuttonp">This mode displays all single choice questions in a list format.</p>
+		<mat-divider></mat-divider>
+		<p></p>
+
+	</mat-card>
+</div>
+<div class="parent">
+
+	<div class="div2"> 
+
+		<mat-card class="list1card" *ngIf="mode === 'SCQ'">
+
+			<div *ngFor="let q of data_SCQ">
+				
+				<mat-card style="padding: 20px">
+					<p>Question ID | {{q.qid}}</p>
+					<p>{{q.qtxt}}</p>
+					<mat-divider style="margin: 20px 0 20px 0"></mat-divider>
+					<mat-radio-group>
+					<div *ngFor="let ans of q.qans index as i" [class.correct]="currentAnswer[0] === q.qid && currentAnswer[1] === i" [class.wrong]="">
+    					<p><mat-radio-button value="1" (input)="onRadioInput(q.qid,i)">{{ans}}</mat-radio-button></p>
+                	</div>
+               		</mat-radio-group>
+                	<mat-divider style="margin: 20px 0 20px 0"></mat-divider>
+                	<button mat-flat-button color="accent" class="checkbutton" (click)="onCheckClicked(q.qid)">Check</button>
+                </mat-card>
+                <mat-divider style="margin: 20px 0 20px 0"></mat-divider>
+			</div>
+
+		</mat-card>
+
+		<mat-card class="list2card" *ngIf="mode === 'MCQ'">
+
+			<div *ngFor="let q of data_MCQ">
+				<p>Question ID | {{q.qid}}</p>
+				<p>{{q.qtxt}}</p>
+
+				<div *ngFor="let ans of q.qans index as i">
+    				<p><mat-radio-button value="1" >{{ans}}</mat-radio-button></p>
+                </div>
+
+			</div>
+
+		</mat-card>
+
+
+		<mat-card class="list3card" *ngIf="mode === 'FIQ'">
+		
+			<div *ngFor="let q of data_FIQ">
+				<p>Question ID | {{q.qid}}</p>
+				<p>{{q.qtxt}}</p>
+
+				<div *ngFor="let ans of q.qans index as i">
+    				<p><mat-radio-button value="1" >{{ans}}</mat-radio-button></p>
+                </div>
+
+			</div>
+
+		</mat-card>
+
+	</div>
+</div> 
